@@ -1,0 +1,27 @@
+// ------------------------------------
+//   #HTML
+// ------------------------------------
+
+html {
+  height: 100%;
+}
+
+// ------------------------------------
+//   #BODY
+// ------------------------------------
+
+body {
+  @include smooth-font;
+
+  background-color: var(--white);
+  min-width: 320px;
+  max-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  line-height: var(--line-height);
+  color: var(--text-color);
+  font-family: var(--primary-font-family);
+  font-weight: 400;
+}

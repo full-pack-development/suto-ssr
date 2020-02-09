@@ -1,0 +1,56 @@
+@import '../../styles/init';
+
+.block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(71, 68, 67, 0.702);
+  width: 100%;
+}
+
+.logo {
+  padding: 8px;
+  max-width: 60px;
+  max-height: 100%;
+}
+
+.logoImage {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.content {
+  @include flex(space-between, center);
+
+  padding: 0 16px;
+  height: 80px;
+
+  @include media-breakpoint-up(sm) {
+    height: 108px;
+  }
+}
+
+.mobile {
+  @include media-breakpoint-down(xs) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-color: var(--white);
+  }
+}
+
+.burger {
+  @include reset-button;
+  @include size(40px);
+
+  display: inline-block;
+  position: relative;
+  background-color: #f00;
+
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+

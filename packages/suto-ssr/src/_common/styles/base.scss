@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+@import 'init';
+
+//
+// Reboot default styles by Bootstrap reset method
+//
+@import 'reset/reboot';
+
+//
+// Global styles & Custom Properties
+//
+
+@import 'base/variables/all';
+@import 'global';

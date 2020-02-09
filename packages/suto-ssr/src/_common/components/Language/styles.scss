@@ -1,0 +1,14 @@
+@import '../../styles/init';
+
+.item {
+  @include reset-button;
+
+  opacity: 0.2;
+  color: var(--white-light);
+  font-size: 18px;
+
+  &.isActive {
+    opacity: 1;
+    font-size: 24px;
+  }
+}

@@ -8,13 +8,16 @@ import App from 'next/app'
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 import withRedux from 'next-redux-wrapper'
 
+import { Header } from '../../_common/components/Header'
+import { Footer } from '../../_common/components/Footer'
+import { HeroSection } from '../../_common/components/HeroSection'
 import { CANT_STRINGIFY, safeStringify } from '../../_common/_helpers/safeStringify'
 import ModalsProvider from '../../_common/ModalsProvider/ModalsProvider'
 import LocaleProvider from '../../_common/LocaleProvider/LocaleProvider'
 import '../../_common/styles/base.scss'
 import rootReducer from '../../store/rootReducer'
 
-import classes from './styles.scss'
+import styles from './styles.scss'
 
 const makeStore = (initialState) => createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)))
 
@@ -67,6 +70,10 @@ class MyApp extends App {
             rel="shortcut icon"
             href="/static/favicon.ico"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Playfair+Display|Ubuntu&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <LocaleProvider
           initialLocale={initialLocale}
@@ -76,14 +83,16 @@ class MyApp extends App {
             <ModalsProvider
               modalInitialValues={modalInitialValues}
             >
-              <header>Header</header>
-              <main className={classes.wrap}>
-                Main
-                <Page
-                  {...pageProps}
-                />
-              </main>
-              <footer>Footer</footer>
+              <div className={styles.block}>
+                <Header />
+                <main className={styles.main}>
+                  <HeroSection />
+                  <Page
+                    {...pageProps}
+                  />
+                </main>
+                <Footer />
+              </div>
             </ModalsProvider>
           </Provider>
         </LocaleProvider>

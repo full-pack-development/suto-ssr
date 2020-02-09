@@ -1,0 +1,28 @@
+@import '../../styles/init';
+
+.block {
+  padding: 8px;
+}
+
+.item {
+  margin: 0 70px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 16px;
+
+  &::after {
+    @include size(4px);
+    @include transition(opacity);
+
+    display: inline-block;
+    margin-left: 4px;
+    border-radius: 50%;
+    background: var(--white);
+    vertical-align: middle;
+    content: '';
+  }
+
+  &.isActive {
+    opacity: 0.2;
+  }
+}
