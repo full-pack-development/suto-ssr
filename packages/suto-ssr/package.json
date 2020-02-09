@@ -4,10 +4,10 @@
   "license": "ISC",
   "type": "module",
   "scripts": {
-    "dev": "cross-env PORT=3003 HOST=localhost ENV_LABEL=localhost LOG_LEVEL=debug nodemon --inspect-brk server/index.js",
+    "dev": "cross-env PORT=3000 HOST=localhost ENV_LABEL=localhost LOG_LEVEL=debug nodemon --inspect-brk server/index.js",
+    "js-dev": "cross-env PORT=3000 HOST=localhost ENV_LABEL=localhost LOG_LEVEL=debug nodemon --inspect server/index.js",
     "build": "next build",
-    "build-inspect": "node --inspect node_modules/.bin/next build",
-    "start": "node --inspect server/index.js",
+    "start": "node server/index.js",
     "eslint": "eslint --fix ./**/*.js ./*.js"
   },
   "dependencies": {

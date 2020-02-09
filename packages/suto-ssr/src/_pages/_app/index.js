@@ -1,6 +1,7 @@
 import React from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+// TODO: replace with saga
 import thunk from 'redux-thunk'
 import Head from 'next/head'
 import App from 'next/app'
