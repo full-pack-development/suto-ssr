@@ -1,0 +1,53 @@
+{
+  "name": "full-pack",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "suto": "lerna run dev --scope=suto-* --stream"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.7.4",
+    "axios": "^0.19.2",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "file-loader": "^4.2.0",
+    "husky": "^3.1.0",
+    "lerna": "^3.20.2",
+    "lint-staged": "^9.5.0",
+    "lodash": "^4.17.15",
+    "nodemon": "^1.19.3",
+    "stylelint": "^10.1.0",
+    "stylelint-config-concentric-order": "^3.4.1",
+    "stylelint-config-sass-guidelines": "^6.0.0",
+    "stylelint-order": "^3.1.0",
+    "stylelint-scss": "^3.10.1",
+    "then-fs": "^2.0.0",
+    "url-loader": "^2.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "node ./git-hooks/prepare-commit-msg.js"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "git add"
+    ]
+  }
+}
