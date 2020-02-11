@@ -1,6 +1,6 @@
 @import '../../styles/init';
 
 .block {
-  background-color: #0bccee;
+  background-color: var(--gray);
   min-height: 100vh;
 }

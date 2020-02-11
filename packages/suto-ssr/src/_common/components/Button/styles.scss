@@ -1,0 +1,9 @@
+@import '../../styles/init';
+
+.block {
+  @include flex(center, center, $display: inline-flex);
+  @include make-spacer(p, 0);
+
+  border: 0;
+  background-color: transparent;
+}
