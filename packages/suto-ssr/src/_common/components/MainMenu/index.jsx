@@ -1,5 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import styles from './styles.scss'
@@ -50,17 +49,5 @@ export const MainMenu = ({
     ))}
   </nav>
 )
-
-MainMenu.propTypes = {
-  // required props
-
-  // container props
-
-  // optional props
-}
-
-MainMenu.defaultProps = {
-  // optional props
-}
 
 export default MainMenu

@@ -1,5 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 
 import styles from './styles.scss'
 
@@ -15,17 +14,5 @@ export const Footer = ({
   </footer>
 
 )
-
-Footer.propTypes = {
-  // required props
-
-  // container props
-
-  // optional props
-}
-
-Footer.defaultProps = {
-  // optional props
-}
 
 export default Footer

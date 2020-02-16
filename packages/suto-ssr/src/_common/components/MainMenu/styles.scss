@@ -1,28 +1,32 @@
 @import '../../styles/init';
 
 .block {
-  padding: 8px;
+  padding: 0 16px;
 }
 
 .item {
-  margin: 0 70px;
+  margin: 0 35px;
   text-decoration: none;
   color: var(--white);
   font-size: 16px;
 
-  &::after {
-    @include size(4px);
-    @include transition(opacity);
-
-    display: inline-block;
-    margin-left: 4px;
-    border-radius: 50%;
-    background: var(--white);
-    vertical-align: middle;
-    content: '';
+  &:first-child {
+    margin-left: 16px;
   }
 
   &.isActive {
-    opacity: 0.2;
+    opacity: 0.6;
+
+    &::after {
+      @include size(4px);
+      @include transition(opacity);
+
+      display: inline-block;
+      margin-left: 4px;
+      border-radius: 50%;
+      background: var(--white);
+      vertical-align: middle;
+      content: '';
+    }
   }
 }

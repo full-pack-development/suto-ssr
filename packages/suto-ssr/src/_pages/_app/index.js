@@ -9,6 +9,8 @@ import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 import withRedux from 'next-redux-wrapper'
 
 import { Header } from '../../_common/components/Header'
+import { TextSection } from '../../_common/components/TextSection'
+import { SectionTwo } from '../../_common/components/SectionTwo'
 import { Footer } from '../../_common/components/Footer'
 import { HeroSection } from '../../_common/components/HeroSection'
 import { CANT_STRINGIFY, safeStringify } from '../../_common/_helpers/safeStringify'
@@ -87,6 +89,13 @@ class MyApp extends App {
                 <Header />
                 <main className={styles.main}>
                   <HeroSection />
+                  <TextSection
+                    title="Капсули - це завершені інтер’єрні композиції"
+                    text="Над кожною з них працюють  професійні  дизайнери, щоб втілити різноманіття стилістичних
+                      концепцій: від  практичного мінімалізму до  елегантної  класики, від  брутального лофт до
+                      затишного скандинавського хьюге"
+                  />
+                  <SectionTwo />
                   <Page
                     {...pageProps}
                   />

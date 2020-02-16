@@ -1,8 +1,18 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import styles from './styles.scss'
+
+export const BUTTON_SIZE = {
+  SM: 'sm',
+  MD: 'md',
+  LG: 'lg',
+  FLUID: 'fluid',
+}
+
+export const BUTTON_PRIORITY = {
+  REGULAR: 'regular',
+}
 
 export const Button = ({
   // required props
@@ -12,30 +22,42 @@ export const Button = ({
   // optional props
   children,
   size,
+  priority,
   type = 'button',
-}) => (
-  <button // eslint-disable-line
-    type={type}
-    className={classNames(
+  href,
+  className,
+  ...props
+}) => {
+  const buttonStyles = (
+    classNames(
       styles.block,
       styles[size],
-    )}
-  >
-    {children}
-  </button>
-
-)
-
-Button.propTypes = {
-  // required props
-
-  // container props
-
-  // optional props
-}
-
-Button.defaultProps = {
-  // optional props
+      styles[priority],
+      className,
+    )
+  )
+  return (
+    <>
+      {href && (
+        <a
+          href={href}
+          className={buttonStyles}
+          {...props}
+        >
+          {children}
+        </a>
+      )}
+      {!href && (
+        <button // eslint-disable-line
+          type={type}
+          className={buttonStyles}
+          {...props}
+        >
+          {children}
+        </button>
+      )}
+    </>
+  )
 }
 
 export default Button

@@ -1,7 +1,5 @@
 import React from 'react'
 
-// import PropTypes from 'prop-types'
-
 import { Wrapper } from '../Wrapper'
 import { Language } from '../Language'
 import { MainMenu } from '../MainMenu'
@@ -44,17 +42,5 @@ export const Header = ({
     </Wrapper>
   </header>
 )
-
-Header.propTypes = {
-  // required props
-
-  // container props
-
-  // optional props
-}
-
-Header.defaultProps = {
-  // optional props
-}
 
 export default Header

@@ -1,0 +1,21 @@
+@import '../../styles/init';
+
+.block {
+  margin: 0 auto;
+  padding: 105px 0;
+  max-width: 1230px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.title {
+  margin-bottom: 56px;
+  color: var(--text-color);
+  font-family: var(--secondary-font-family);
+  font-size: 60px;
+}
+
+.text {
+  color: var(--gray-800);
+  font-size: 36px;
+}
