@@ -2,6 +2,18 @@
 
 .block {
   @include flex;
+
+  &.isRound {
+    justify-content: center;
+
+    .item {
+      @include size(38px);
+      @include flex(center, center);
+
+      border: 1px solid var(--white);
+      border-radius: 50%;
+    }
+  }
 }
 
 .item {

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Wrapper } from '../Wrapper'
+import { Logo } from '../Logo'
 import { Language } from '../Language'
 import { MainMenu } from '../MainMenu'
 import { Socials } from '../Socials'
@@ -27,11 +28,7 @@ export const Header = ({
           href="#"
           className={styles.logo}
         >
-          <img
-            src="https://via.placeholder.com/62"
-            alt=""
-            className={styles.logoImage}
-          />
+          <Logo />
         </a>
         <div className={styles.mobile}>
           <MainMenu />

@@ -2,6 +2,13 @@
 
 .block {
   padding: 0 16px;
+
+  &.darken {
+
+    .item {
+      color: var(--text-color);
+    }
+  }
 }
 
 .item {

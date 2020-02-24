@@ -6,6 +6,12 @@
   max-width: 1230px;
   text-align: center;
   line-height: 1.2;
+
+  &.reset {
+    padding: 0;
+    max-width: none;
+    text-align: inherit;
+  }
 }
 
 .title {

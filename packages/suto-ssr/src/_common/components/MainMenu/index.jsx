@@ -32,8 +32,9 @@ export const MainMenu = ({
   // container props
 
   // optional props
+  dark,
 }) => (
-  <nav className={styles.block}>
+  <nav className={classNames(styles.block, { [styles.darken]: dark })}>
     {menu.map((item) => (
       <a
         href={item.href}

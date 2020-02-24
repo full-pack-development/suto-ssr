@@ -4,4 +4,8 @@
   margin: auto;
   padding: 0 16px;
   max-width: 1752px;
+
+  &.fluid {
+    max-width: none;
+  }
 }

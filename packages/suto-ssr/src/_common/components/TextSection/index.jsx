@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { Wrapper } from '../Wrapper'
+import classNames from 'classnames'
 
 import styles from './styles.scss'
 
@@ -11,14 +10,12 @@ export const TextSection = ({
   // container props
 
   // optional props
+  reset = false,
 }) => (
-  <Wrapper>
-    <div className={styles.block}>
-      <p className={styles.title}>{title}</p>
-      <p className={styles.text}>{text}</p>
-    </div>
-  </Wrapper>
-
+  <div className={classNames(styles.block, { [styles.reset]: reset })}>
+    <p className={styles.title}>{title}</p>
+    <p className={styles.text}>{text}</p>
+  </div>
 )
 
 export default TextSection

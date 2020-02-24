@@ -1,0 +1,88 @@
+@import '../../styles/init';
+
+.block {
+  display: grid;
+  position: relative;
+  grid-template-rows: 600px 480px;
+  grid-template-columns: 31% 26% 22% 25%;
+}
+
+.tabs {
+  @include reset-list;
+  @include size(100%);
+  @include flex(center, flex-start, column);
+
+  background-color: var(--gray-700);
+  padding: 60px;
+  color: var(--white);
+  font-family: var(--secondary-font-family);
+}
+
+.item {
+  margin-bottom: 40px;
+  font-size: 48px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.active {
+    text-transform: uppercase;
+    font-size: 66px;
+  }
+}
+
+.image {
+  @include size(100%);
+
+  display: block;
+  object-fit: cover;
+}
+
+.section {
+  @include size(100%);
+
+  position: relative;
+}
+
+.wrapper {
+  @include size(100%);
+
+  position: relative;
+  background-color: var(--gray-300);
+  padding: 150px 85px;
+  overflow: hidden;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 90px;
+    bottom: 90px;
+    left: 84px;
+    border: 1px solid rgba(#fff, 0.302);
+    width: 100%;
+    content: '';
+  }
+}
+
+.decor {
+  @include size(100%);
+
+  background-color: var(--brown-100);
+}
+
+.text {
+  @include size(100%);
+
+  background-color: var(--brown-100);
+  padding: 80px 70px;
+  color: var(--gray-500);
+  font-size: 24px;
+}
+
+.title {
+  margin-bottom: 24px;
+  color: var(--text-color);
+  font-family: var(--secondary-font-family);
+  font-size: 36px;
+}

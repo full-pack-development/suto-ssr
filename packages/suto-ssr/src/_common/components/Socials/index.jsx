@@ -25,17 +25,15 @@ export const Socials = ({
   rounded,
 }) => (
 
-  <div className={styles.block}>
+  <div className={classNames(styles.block, {
+    [styles.isRound]: rounded,
+  })}
+  >
     {socials.map((social) => (
       <a
         href={social.href}
         key={social.type}
-        className={classNames(
-          styles.item,
-          {
-            [styles.isRound]: rounded,
-          },
-        )}
+        className={styles.item}
       >
         <img
           src={social.icon}

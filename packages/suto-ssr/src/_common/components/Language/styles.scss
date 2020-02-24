@@ -1,5 +1,12 @@
 @import '../../styles/init';
 
+.darken {
+
+  .item {
+    color: var(--text-color);
+  }
+}
+
 .item {
   @include reset-button;
 
