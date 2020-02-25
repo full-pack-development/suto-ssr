@@ -9,6 +9,21 @@
       color: var(--text-color);
     }
   }
+
+  &.isAdaptive {
+    @include media-breakpoint-down(sm) {
+
+      .item {
+        display: block;
+        margin: 0 0 40px;
+        font-size: 18px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
 }
 
 .item {

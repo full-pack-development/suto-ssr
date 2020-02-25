@@ -22,7 +22,7 @@ export const Language = ({
   // optional props
   dark,
 }) => (
-  <div className={classNames({ [styles.darken]: dark })}>
+  <div className={classNames(styles.block, { [styles.darken]: dark })}>
     {mockDada.map((item) => (
       <button
         key={item.lang}

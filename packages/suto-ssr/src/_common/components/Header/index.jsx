@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import classNames from 'classnames'
 
 import { Wrapper } from '../Wrapper'
 import { Logo } from '../Logo'
@@ -6,6 +7,7 @@ import { Language } from '../Language'
 import { MainMenu } from '../MainMenu'
 import { Socials } from '../Socials'
 
+import MenuButton from './MenuButton'
 import styles from './styles.scss'
 
 export const Header = ({
@@ -14,30 +16,38 @@ export const Header = ({
   // container props
 
   // optional props
-}) => (
-  <header className={styles.block}>
-    <Wrapper>
-      <div className={styles.content}>
-        <button
-          type="button"
-          className={styles.burger}
-        >
-          <span className={styles.burgerInner} />
-        </button>
-        <a
-          href="#"
-          className={styles.logo}
-        >
-          <Logo />
-        </a>
-        <div className={styles.mobile}>
-          <MainMenu />
-          <Socials />
+}) => {
+  const [isOpen, setOpen] = useState(false)
+
+  const clickHandler = () => {
+    setOpen(!isOpen)
+  }
+
+  return (
+    <header className={styles.block}>
+      <Wrapper>
+        <div className={styles.content}>
+          <div className={styles.burger}>
+            <MenuButton
+              onClick={clickHandler}
+              isMenuOpened={isOpen}
+            />
+          </div>
+          <a
+            href="#"
+            className={styles.logo}
+          >
+            <Logo />
+          </a>
+          <div className={classNames(styles.mobile, { [styles.isOpen]: isOpen })}>
+            <MainMenu isAdaptive />
+            <Socials />
+          </div>
+          <Language />
         </div>
-        <Language />
-      </div>
-    </Wrapper>
-  </header>
-)
+      </Wrapper>
+    </header>
+  )
+}
 
 export default Header

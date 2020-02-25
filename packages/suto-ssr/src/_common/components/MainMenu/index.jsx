@@ -33,8 +33,16 @@ export const MainMenu = ({
 
   // optional props
   dark,
+  isAdaptive,
 }) => (
-  <nav className={classNames(styles.block, { [styles.darken]: dark })}>
+  <nav className={classNames(
+    styles.block,
+    {
+      [styles.darken]: dark,
+      [styles.isAdaptive]: isAdaptive,
+    },
+  )}
+  >
     {menu.map((item) => (
       <a
         href={item.href}

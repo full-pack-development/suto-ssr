@@ -11,10 +11,16 @@ export const TextSection = ({
 
   // optional props
   reset = false,
+  children,
 }) => (
   <div className={classNames(styles.block, { [styles.reset]: reset })}>
-    <p className={styles.title}>{title}</p>
-    <p className={styles.text}>{text}</p>
+    {title && (
+      <p className={styles.title}>{title}</p>
+    )}
+    {text && (
+      <p className={styles.text}>{text}</p>
+    )}
+    {children}
   </div>
 )
 
