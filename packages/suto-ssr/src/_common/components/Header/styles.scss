@@ -1,0 +1,81 @@
+@import '../../styles/init';
+
+.block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(71, 68, 67, 0.702);
+  width: 100%;
+}
+
+.logo {
+  @include absolute-center;
+
+  padding: 8px;
+  max-width: 62px;
+  max-height: 100%;
+
+  @include media-breakpoint-up(md) {
+    position: static;
+    transform: none;
+  }
+}
+
+.content {
+  @include flex(space-between, center);
+
+  height: 90px;
+
+  @include media-breakpoint-up(sm) {
+    padding: 0 16px;
+    height: 108px;
+  }
+}
+
+.mobile {
+  top: 90px;
+
+  @include media-breakpoint-up(sm) {
+    top: 108px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include transition(opacity);
+
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(71, 68, 67, 0.702);
+    padding: 30px;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include flex(space-between, center);
+
+    top: 0;
+    flex: 1;
+    visibility: visible;
+    opacity: 1;
+    padding-right: 60px;
+  }
+
+  &.isOpen {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.burger {
+  @include reset-button;
+  @include size(40px);
+
+  display: inline-block;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+

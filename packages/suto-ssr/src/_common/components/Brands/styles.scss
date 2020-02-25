@@ -1,0 +1,12 @@
+@import '../../styles/init';
+
+.block {
+  @include flex(space-between, center);
+
+  padding: 220px 0;
+}
+
+.image {
+  max-width: 240px;
+  max-height: 240px;
+}

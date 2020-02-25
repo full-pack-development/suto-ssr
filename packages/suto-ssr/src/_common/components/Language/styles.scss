@@ -1,0 +1,30 @@
+@import '../../styles/init';
+
+.block {
+  @include media-breakpoint-down(sm) {
+    @include flex(space-between, center, column);
+
+    height: 60px;
+  }
+
+  &.darken {
+
+    .item {
+      color: var(--text-color);
+    }
+  }
+}
+
+
+.item {
+  @include reset-button;
+
+  opacity: 0.2;
+  color: var(--white-light);
+  font-size: 18px;
+
+  &.isActive {
+    opacity: 1;
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../styles/init';
+
+.block {
+  @include size(100%);
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo {
+  @include size(100%);
+
+  display: block;
+  object-fit: cover;
+}

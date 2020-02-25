@@ -1,0 +1,19 @@
+@import '../../_common/styles/init';
+
+.spacer {
+  padding: 116px;
+}
+
+.decor {
+  font-family: var(--secondary-font-family);
+  font-size: 30px;
+  font-style: italic;
+}
+
+.wrapper {
+  background-color: #000;
+
+  @include media-breakpoint-up(sm) {
+    background-color: #fff;
+  }
+}

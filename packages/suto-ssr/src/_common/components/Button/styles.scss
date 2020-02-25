@@ -1,0 +1,38 @@
+@import '../../styles/init';
+
+.block {
+  @include flex(center, center, $display: inline-flex);
+
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+
+  &.regular {
+    border-radius: 3px;
+    background-color: var(--gray-600);
+    padding: 0 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 600;
+
+    &:hover {
+      box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.sm {
+    min-height: 16px;
+    font-size: 16px;
+  }
+
+  &.md {
+    min-height: 80px;
+    font-size: 24px;
+  }
+
+  &.fluid {
+    @include size(100%);
+  }
+}
