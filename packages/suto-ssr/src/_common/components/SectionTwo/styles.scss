@@ -1,67 +1,142 @@
 @import '../../styles/init';
 
 .block {
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 160px;
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 0;
+  }
 }
 
 .tabs {
+  @include reset-list;
+
   position: absolute;
-  top: 0;
-  right: 0;
+  bottom: 6px;
+  left: 0;
   background-color: var(--brown-500);
-  padding: 74px 42px 130px;
-  width: 25%;
-  height: 540px;
+  padding: 20px;
+  width: 100%;
+  height: 160px;
   color: var(--white);
+
+  @include media-breakpoint-up(md) {
+    @include flex(center, $direction: column);
+
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    padding: 42px;
+    width: 25%;
+    height: 50%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    display: block;
+    padding: 74px 42px 130px;
+    width: 25%;
+    height: 540px;
+  }
 }
 
 .item {
   @include transition(opacity);
 
+  display: none;
+  justify-content: center;
   opacity: 0.4;
+  text-align: center;
   font-size: 30px;
 
+  @include media-breakpoint-up(md) {
+    @include flex(flex-start, center);
+
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 0;
+  }
+
   &.active {
+    display: flex;
     opacity: 1;
   }
 }
 
 .digit {
-  margin-right: 30px;
-  line-height: 0.55;
-  font-family: var(--secondary-font-family);
-  font-size: 100px;
+  display: none;
+
+  @include media-breakpoint-up(xl) {
+    display: block;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    line-height: 0.55;
+    font-family: var(--secondary-font-family);
+    font-size: 100px;
+  }
 }
 
 .ratio {
   position: relative;
-  padding-bottom: 225%;
-  height: 0;
+
+  @include media-breakpoint-down(sm) {
+
+    &.hiddenMobile {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: 225%;
+    height: 0;
+  }
+
+  &.main {
+    height: 490px;
+
+    @include media-breakpoint-up(md) {
+      height: 0;
+    }
+  }
 }
 
 .section {
   @include size(100%);
 
-  position: absolute;
-  top: 0;
-  left: 0;
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-  &.right {
+    &.right {
 
-    .image {
-      height: 540px;
+      .image {
+        height: 540px;
+      }
     }
-  }
 
-  &.left {
-    @include flex(space-between, center, column);
+    &.left {
+      @include flex(space-between, center, column);
 
-    background-color: var(--gray-300);
-    padding: 50px 0 80px;
-    color: var(--text-color);
-    font-family: var(--secondary-font-family);
+      background-color: var(--gray-300);
+      color: var(--text-color);
+      font-family: var(--secondary-font-family);
+
+      @include media-breakpoint-up(md) {
+        padding: 16px 0;
+      }
+
+      @include media-breakpoint-up(xl) {
+        padding: 50px 0 80px;
+      }
+    }
   }
 }
 
@@ -72,32 +147,76 @@
 }
 
 .title {
-  line-height: 1;
-  font-family: var(--secondary-font-family);
-  font-size: 180px;
-}
+  @include size(150px);
 
-.under {
-  @include size(100%);
-
-  position: relative;
-  flex: 1;
-}
-
-.subtitle {
   position: absolute;
   top: 0;
   left: 0;
-  transform: rotateZ(-90deg) translate(-200px, -214px);
-  opacity: 0.851;
-  width: 600px;
-  text-align: right;
-  text-transform: uppercase;
-  font-size: 70px;
+  z-index: 2;
+  background-color: var(--brown-500);
+  text-align: center;
+  color: var(--white);
+  font-family: var(--secondary-font-family);
+  font-size: 100px;
+
+  @include media-breakpoint-up(md) {
+    @include size(auto);
+
+    position: static;
+    background-color: transparent;
+    line-height: 1;
+    color: var(--text-color);
+    font-size: 80px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 180px;
+  }
+}
+
+.under {
+  @include media-breakpoint-up(md) {
+    @include size(100%);
+
+    position: relative;
+    flex: 1;
+  }
+}
+
+.subtitle {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateZ(-90deg) translate(-200px, -214px);
+    opacity: 0.851;
+    width: 506px;
+    text-align: right;
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-size: 40px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 600px;
+    font-size: 70px;
+  }
 }
 
 .text {
-  font-size: 40px;
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 40px;
+  }
 }
 
 .image {
@@ -105,4 +224,20 @@
 
   display: block;
   object-fit: cover;
+}
+
+.arrows {
+  bottom: 38px;
+
+  &.left {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 40px;
+  }
+
+  &.right {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -40px;
+  }
 }

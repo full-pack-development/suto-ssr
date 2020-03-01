@@ -21,7 +21,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     grid-template-columns: 460px 400px 400px 1fr;
     padding: 0 85px;
   }
@@ -43,7 +43,9 @@
 .footerBottom {
   @include media-breakpoint-up(md) {
     @include flex(space-between, center);
+  }
 
+  @include media-breakpoint-up(lg) {
     padding: 0 55px;
   }
 }

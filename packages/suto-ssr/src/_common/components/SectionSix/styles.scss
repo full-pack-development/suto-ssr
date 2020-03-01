@@ -1,34 +1,63 @@
 @import '../../styles/init';
 
 .block {
-  display: grid;
-  position: relative;
-  grid-template-rows: 600px 480px;
-  grid-template-columns: 31% 26% 22% 25%;
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    position: relative;
+    grid-template-rows: 540px 380px;
+    grid-template-columns: 31% 26% 22% 25%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-rows: 600px 480px;
+  }
 }
 
 .tabs {
   @include reset-list;
-  @include size(100%);
   @include flex(center, flex-start, column);
 
+  position: absolute;
+  top: 490px;
+  left: 0;
   background-color: var(--gray-700);
-  padding: 60px;
+  padding: 32px;
+  width: 100%;
+  height: 236px;
   color: var(--white);
   font-family: var(--secondary-font-family);
+
+  @include media-breakpoint-up(lg) {
+    @include size(31%, 540px);
+
+    top: 0;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 60px;
+    height: 600px;
+  }
 }
 
 .item {
-  margin-bottom: 40px;
-  font-size: 48px;
+  @include transition(opacity);
+
+  opacity: 0.6;
+  margin-bottom: 20px;
+  font-size: 36px;
 
   &:last-child {
     margin-bottom: 0;
   }
 
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 40px;
+    font-size: 48px;
+  }
+
   &.active {
+    opacity: 1;
     text-transform: uppercase;
-    font-size: 66px;
   }
 }
 
@@ -42,7 +71,27 @@
 .section {
   @include size(100%);
 
+  display: none;
   position: relative;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+
+  &.main {
+    display: block;
+    margin-bottom: 236px;
+    height: 490px;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+      height: auto;
+    }
+  }
+
+  &.mobTitle {
+    display: block;
+  }
 }
 
 .wrapper {
@@ -75,14 +124,29 @@
   @include size(100%);
 
   background-color: var(--brown-100);
-  padding: 80px 70px;
+  padding: 32px;
+  text-align: center;
   color: var(--gray-500);
-  font-size: 24px;
+  font-size: 18px;
+
+  @include media-breakpoint-up(lg) {
+    text-align: left;
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 80px 70px;
+  }
 }
 
 .title {
-  margin-bottom: 24px;
+  margin-bottom: 42px;
   color: var(--text-color);
   font-family: var(--secondary-font-family);
   font-size: 36px;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 24px;
+    font-size: 30px;
+  }
 }
