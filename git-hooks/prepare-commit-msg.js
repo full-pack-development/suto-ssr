@@ -35,7 +35,7 @@ async function fixCommitMessage() {
   let issuetypeId
   if (jiraTicket) {
     const response = await fetchJiraTicket(jiraTicket)
-    const fields = response.data.fields
+    const fields = response.dataSections.fields
     issuetypeId = fields.issuetype.id
     summary = _.kebabCase(fields.summary.trimStart())
   }

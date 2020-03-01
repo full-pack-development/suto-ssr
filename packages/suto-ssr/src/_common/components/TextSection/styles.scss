@@ -2,9 +2,13 @@
 
 .block {
   margin: 0 auto;
-  padding: 105px 0;
+  padding: 40px 0;
   max-width: 1230px;
   text-align: center;
+
+  @include media-breakpoint-up(xl) {
+    padding: 105px 0;
+  }
 
   &.reset {
     padding: 0;
@@ -14,12 +18,13 @@
 }
 
 .title {
-  margin-bottom: 56px;
+  margin-bottom: 42px;
   color: var(--text-color);
   font-family: var(--secondary-font-family);
   font-size: 36px;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 56px;
     font-size: 60px;
   }
 }
@@ -28,7 +33,7 @@
   color: var(--gray-800);
   font-size: 18px;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(xl) {
     font-size: 36px;
   }
 }

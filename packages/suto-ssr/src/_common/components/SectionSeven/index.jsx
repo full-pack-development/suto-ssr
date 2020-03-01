@@ -6,7 +6,7 @@ import styles from './styles.scss'
 
 export const SectionSeven = ({
   // required props
-
+  data,
   // container props
 
   // optional props
@@ -16,7 +16,7 @@ export const SectionSeven = ({
       <div className={styles.ratio}>
         <div className={styles.section}>
           <img
-            src="https://via.placeholder.com/1080x1080"
+            src={data.image}
             alt=""
             className={styles.image}
           />
@@ -26,9 +26,8 @@ export const SectionSeven = ({
     <div className={styles.text}>
       <TextSection
         reset
-        title="Капсули “kit” гарантують дотримання строків та бездоганну якість"
-        text="Використання в капсулах передових технологій  та професійних  матеріалів дозволяє
-          економити  час ремонту та забезпечувати найкращий результат"
+        title={data.title}
+        text={data.text}
       />
     </div>
   </div>

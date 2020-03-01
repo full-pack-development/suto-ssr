@@ -1,67 +1,98 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames'
+
+import { SliderMarkup } from '../Slider'
+import { SliderArrow } from '../SliderArrow'
 
 import styles from './styles.scss'
 
 export const SectionThree = ({
   // required props
-
+  data,
   // container props
 
   // optional props
-}) => (
-  <div className={styles.block}>
-    <div className={styles.ratio}>
-      <div className={styles.section}>
-        <img
-          src="https://via.placeholder.com/465x540"
-          alt=""
-          className={styles.image}
+}) => {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  return (
+    <SliderMarkup
+      fade
+      dots
+      dotsClass={styles.tabs}
+      afterChange={(current) => setCurrentSlide(current)}
+      nextArrow={(
+        <SliderArrow
+          side="right"
+          color="black"
+          classname={classNames(styles.arrows, styles.right)}
         />
-      </div>
-    </div>
-    <div className={styles.ratio}>
-      <div className={classNames(styles.section, styles.gray)} />
-    </div>
-    <div className={styles.ratio}>
-      <div className={classNames(styles.section, styles.brown)}>
-        <div className={styles.tabs}>
-          <div className={styles.item}>кухня</div>
-          <div className={classNames(styles.item, styles.active)}>вітальня</div>
-          <div className={styles.item}>спальня</div>
-          <div className={styles.item}>ванна кімната</div>
+      )}
+      prevArrow={(
+        <SliderArrow
+          side="left"
+          color="black"
+          classname={classNames(styles.arrows, styles.left)}
+        />
+      )}
+      customPaging={(index) => (
+        <div className={classNames(styles.item, {
+          [styles.active]: currentSlide === index,
+        })}
+        >
+          {data[index].title}
         </div>
-      </div>
-    </div>
-    <div className={styles.ratio}>
-      <div className={styles.section}>
-        <img
-          src="https://via.placeholder.com/465x540"
-          alt=""
-          className={styles.image}
-        />
-      </div>
-    </div>
-    <div className={classNames(styles.ratio, styles.horizontal, styles.left)}>
-      <div className={styles.section}>
-        <img
-          src="https://via.placeholder.com/960x540"
-          alt=""
-          className={styles.image}
-        />
-      </div>
-    </div>
-    <div className={classNames(styles.ratio, styles.horizontal, styles.right)}>
-      <div className={styles.section}>
-        <img
-          src="https://via.placeholder.com/960x540"
-          alt=""
-          className={styles.image}
-        />
-      </div>
-    </div>
-  </div>
-
-)
+      )}
+    >
+      {data.map((section) => (
+        <div key={section.id}>
+          <div className={styles.block}>
+            <div className={classNames(styles.ratio, styles.main)}>
+              <div className={styles.section}>
+                <img
+                  src={section.firstImage}
+                  alt=""
+                  className={styles.image}
+                />
+              </div>
+            </div>
+            <div className={styles.ratio}>
+              <div className={classNames(styles.section, styles.gray)} />
+            </div>
+            <div className={classNames(styles.ratio, styles.controls)}>
+              <div className={classNames(styles.section, styles.brown)} />
+            </div>
+            <div className={styles.ratio}>
+              <div className={styles.section}>
+                <img
+                  src={section.secondImage}
+                  alt=""
+                  className={styles.image}
+                />
+              </div>
+            </div>
+            <div className={classNames(styles.ratio, styles.horizontal, styles.left)}>
+              <div className={styles.section}>
+                <img
+                  src={section.thirdImage}
+                  alt=""
+                  className={styles.image}
+                />
+              </div>
+            </div>
+            <div className={classNames(styles.ratio, styles.horizontal, styles.right)}>
+              <div className={styles.section}>
+                <img
+                  src={section.fourthImage}
+                  alt=""
+                  className={styles.image}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </SliderMarkup>
+  )
+}
 
 export default SectionThree

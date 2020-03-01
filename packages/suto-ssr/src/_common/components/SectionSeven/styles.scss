@@ -1,21 +1,28 @@
 @import '../../styles/init';
 
 .block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 800px;
+  }
 }
 
 .text {
   @include flex(center, flex-start, column);
 
   background-color: var(--brown-100);
-  padding: 230px 90px;
+  padding: 32px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 230px 90px;
+  }
 }
 
 .ratio {
+  @include size(100%);
+
   position: relative;
-  padding-top: 100%;
-  height: 0;
 }
 
 .section {
@@ -27,8 +34,12 @@
 }
 
 .image {
-  @include size(100%);
+  @include size(100%, 490px);
 
   display: block;
   object-fit: cover;
+
+  @include media-breakpoint-up(lg) {
+    @include size(100%);
+  }
 }

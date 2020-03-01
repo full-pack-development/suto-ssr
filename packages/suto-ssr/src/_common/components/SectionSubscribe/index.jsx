@@ -7,7 +7,7 @@ import styles from './styles.scss'
 
 export const SectionSubscribe = ({
   // required props
-
+  data,
   // container props
 
   // optional props
@@ -16,9 +16,8 @@ export const SectionSubscribe = ({
     <div className={styles.wrapper}>
       <TextSection
         reset
-        title="Приєднуйтесь до нашої розсилки"
-        text="Підпишіться на розсилку, щоб першими дізнаватися про нові капсули та акції від Kit і
-          отримати 3% кешбеку за квадратний метр"
+        title={data.title}
+        text={data.text}
       />
     </div>
     <div className={styles.form}>

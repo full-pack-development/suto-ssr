@@ -1,0 +1,46 @@
+@import '../../styles/init';
+
+.block {
+  @include reset-button;
+  @include size(40px);
+
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  color: transparent;
+
+  &::before {
+    @include absolute-center;
+
+    font-family: var(--secondary-font-family);
+    font-size: 48px;
+  }
+
+  &.left {
+
+    &::before {
+      content: '>';
+    }
+  }
+
+  &.right {
+
+    &::before {
+      content: '<';
+    }
+  }
+
+  &.black {
+
+    &::before {
+      color: var(--text-color);
+    }
+  }
+
+  &.white {
+
+    &::before {
+      color: var(--white);
+    }
+  }
+}

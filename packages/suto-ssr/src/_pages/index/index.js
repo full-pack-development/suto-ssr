@@ -11,6 +11,8 @@ import { Brands } from '../../_common/components/Brands'
 import { SectionSubscribe } from '../../_common/components/SectionSubscribe'
 import { HeroSection } from '../../_common/components/HeroSection'
 import { Wrapper } from '../../_common/components/Wrapper'
+import { dataSections } from '../dataSections'
+import { textSections } from '../textSections'
 
 import styles from './styles.scss'
 
@@ -18,59 +20,53 @@ const MainPage = ({
   // initialNewspapersAboutEvents,
   // initialNewspapers,
 }) => (
-  <div className={styles.wrapper}>
-    <HeroSection />
+  <>
+    <HeroSection data={dataSections.heroSection} />
     <Wrapper>
       <TextSection
-        title="Капсули - це завершені інтер’єрні композиції"
-        text="Над кожною з них працюють  професійні  дизайнери, щоб втілити різноманіття стилістичних
-          концепцій: від  практичного мінімалізму до  елегантної  класики, від  брутального лофт до
-          затишного скандинавського хьюге"
+        title={textSections.textSectionFirst.title}
+        text={textSections.textSectionFirst.text}
       />
     </Wrapper>
-    <SectionTwo />
+    <SectionTwo data={dataSections.sectionTwo} />
     <Wrapper>
       <TextSection
-        title="Естетично бездоганні  та функціональні "
-        text="В капсулах немає  випадкових деталей, все відповідає цілісному образу концепції та її
-          призначенню Естетика в  поєднанні з найвищими технічними стандартами"
+        title={textSections.textSectionSecond.title}
+        text={textSections.textSectionSecond.text}
       />
     </Wrapper>
-    <SectionThree />
+    <SectionThree data={dataSections.sectionThree} />
     <Wrapper>
       <TextSection
-        title="Капсули “kit” підходять для квартир будь-якого розміру"
-        text="Вони сконструйовані таким чином, що однаково  легко  масштабуються на маленькі  та  великі
-          квартири З габаритних квартир робимо смарти"
+        title={textSections.textSectionThird.title}
+        text={textSections.textSectionThird.text}
       />
     </Wrapper>
-    <SectionFour />
+    <SectionFour data={dataSections.sectionFourth} />
     <Wrapper>
       <TextSection
-        title="Фіксована  ціна на кожну капсулу"
-        text="Ви цілком застраховані від додаткових витрат, адже сплачуєте лише вартість обраної капсули.
-          Меблі, текстиль, декорування може бути включено в капсулу за вашим бажанням"
+        title={textSections.textSectionFourth.title}
+        text={textSections.textSectionFourth.text}
       />
     </Wrapper>
-    <SectionFive />
+    <SectionFive data={textSections.sectionFive} />
     <Wrapper>
       <TextSection
-        title="Зручні можливості виконання"
-        text="Ми створили різні цінові пропозиції інтер’єрних капсул:
-          від раціонального Kit  Standart до максимального  - Kit Full"
+        title={textSections.textSectionFive.title}
+        text={textSections.textSectionFive.text}
       />
     </Wrapper>
-    <SectionSix />
+    <SectionSix data={dataSections.sectionSix} />
     <div className={styles.spacer} />
-    <SectionSeven />
-    <Brands />
-    <SectionSubscribe />
+    <SectionSeven data={textSections.sectionSeven} />
+    <Brands data={textSections.brands} />
+    <SectionSubscribe data={textSections.subscribe} />
     <Wrapper>
       <TextSection>
-        <p className={styles.decor}>Живіть у звичному ритмі. Все інше зробимо ми.</p>
+        <p className={styles.decor}>{textSections.textSectionSix.title}</p>
       </TextSection>
     </Wrapper>
-  </div>
+  </>
 )
 
 export default MainPage

@@ -7,37 +7,42 @@ import styles from './styles.scss'
 
 export const SectionFive = ({
   // required props
-
+  data,
   // container props
 
   // optional props
 }) => (
-  <div className={styles.block}>
-    <div className={styles.left}>
-      <div className={styles.block}>
+  <div className={styles.grid}>
+    <div className={styles.decor}>
+      <div className={styles.content}>
         <div className={classNames(styles.column, styles.left)}>
-          <div className={styles.title}>від 300 $/м²</div>
-          <div className={styles.subtitle}>дизайнерський ремонт</div>
+          <div className={styles.title}>{data.columns[0].title}</div>
+          <div className={styles.subtitle}>{data.columns[0].subtitle}</div>
           <div className={styles.text}>
-            з матеріалами та
+            {data.columns[0].textFirst}
             <br />
             {' '}
-            обладнанням включно
+            {data.columns[0].textSecond}
           </div>
         </div>
         <div className={styles.column}>
-          <div className={styles.title}>від 450 $/м²</div>
-          <div className={styles.subtitle}>дизайнерський ремонт</div>
+          <div className={styles.title}>{data.columns[1].title}</div>
+          <div className={styles.subtitle}>{data.columns[1].subtitle}</div>
           <div className={styles.text}>
-            з матеріалами та
+            {data.columns[1].textFirst}
             <br />
             {' '}
-            обладнанням включно
+            {data.columns[1].textSecond}
           </div>
           <ul className={styles.list}>
-            <li className={styles.item}>меблі</li>
-            <li className={styles.item}>текстиль</li>
-            <li className={styles.item}>декор</li>
+            {data.columns[1].list.map((item) => (
+              <li
+                key={item}
+                className={styles.item}
+              >
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -46,11 +51,11 @@ export const SectionFive = ({
           priority={BUTTON_PRIORITY.REGULAR}
           size={BUTTON_SIZE.MD}
         >
-          детальніше про ціни
+          {data.button}
         </Button>
       </div>
     </div>
-    <div className={styles.right}>
+    <div>
       <div className={styles.ratio}>
         <div className={styles.section}>
           <img
