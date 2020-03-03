@@ -3,41 +3,33 @@ const next = require('next')
 
 // eslint-disable-next-line no-debugger
 debugger
-const {
-  wrapAppHttpWithLogger,
-  withTryCatch,
-  mainLogger,
-  debugMethods,
-  SentryInstance,
-  safeStringify,
-} = require('../node-logger-dist')
-
-const serverLogger = mainLogger.child({
-  logger: 'server/index',
-})
+// const serverLogger = mainLogger.child({
+//   logger: 'server/index',
+// })
 const DEFAULT_PORT = 3000
 const PORT = process.env.PORT || DEFAULT_PORT
 const dev = process.env.NODE_ENV !== 'production'
-serverLogger.info(`process.env.PORT=${process.env.PORT}`)
-serverLogger.info(`process.env.HOST=${process.env.HOST}`);
+// serverLogger.info(`process.env.PORT=${process.env.PORT}`)
+// serverLogger.info(`process.env.HOST=${process.env.HOST}`);
 
-(async () => {
+// eslint-disable-next-line semi-style
+;(async () => {
   try {
     const app = next({ dev })
     const handle = app.getRequestHandler()
-    app.prepare = withTryCatch({
-      fn: app.prepare,
-      caller: 'NextApp',
-    })
+    // app.prepare = withTryCatch({
+    //   fn: app.prepare,
+    //   caller: 'NextApp',
+    // })
     await app.prepare()
     const serverApp = express()
-    serverApp.use(SentryInstance.Handlers.requestHandler())
-    wrapAppHttpWithLogger(serverApp)
-    debugMethods({
-      object: serverApp,
-      methods: ['listen'],
-      caller: 'serverApp',
-    })
+    // serverApp.use(SentryInstance.Handlers.requestHandler())
+    // wrapAppHttpWithLogger(serverApp)
+    // debugMethods({
+    //   object: serverApp,
+    //   methods: ['listen'],
+    //   caller: 'serverApp',
+    // })
     serverApp.use(express.json())
 
     // TODO: add proper localization
@@ -56,7 +48,7 @@ serverLogger.info(`process.env.HOST=${process.env.HOST}`);
     ))
 
     serverApp.get('*', (req, res) => handle(req, res))
-    serverApp.use(SentryInstance.Handlers.errorHandler())
+    // serverApp.use(SentryInstance.Handlers.errorHandler())
     await new Promise((resolve, reject) => {
       serverApp.listen(PORT, (err) => (err
         ? reject(err)
@@ -64,7 +56,8 @@ serverLogger.info(`process.env.HOST=${process.env.HOST}`);
       ))
     })
   } catch (e) {
-    serverLogger.warn(`root error - ${safeStringify(e)}`)
-    SentryInstance.captureException(e)
+    console.warn(`root error - ${(e)}`)
+    // serverLogger.warn(`root error - ${safeStringify(e)}`)
+    // SentryInstance.captureException(e)
   }
 })()
