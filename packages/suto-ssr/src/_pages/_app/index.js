@@ -10,7 +10,6 @@ import withRedux from 'next-redux-wrapper'
 
 import { Header } from '../../_common/components/Header'
 import { Footer } from '../../_common/components/Footer'
-import { CANT_STRINGIFY, safeStringify } from '../../_common/_helpers/safeStringify'
 import ModalsProvider from '../../_common/ModalsProvider/ModalsProvider'
 import LocaleProvider from '../../_common/LocaleProvider/LocaleProvider'
 import '../../_common/styles/base.scss'
@@ -25,35 +24,6 @@ const modalInitialValues = {
 }
 // ========== executed once on the client, maybe there is some better place for config
 class MyApp extends App {
-  static async getInitialProps({
-    Component, ctx, router, store,
-  }) {
-    // TODO: think about normal solution
-    const hasRuLang = ctx.asPath.split('/')[1] === 'ru'
-    const initialLocale = hasRuLang ? 'ru' : (router.query.language || 'en')
-
-    const pagePropsPromise = Component.getInitialProps ? Component.getInitialProps({
-      ctx,
-      router,
-      store,
-      initialLocale,
-    }) : {}
-    const [
-      pageProps,
-    ] = await Promise.all([
-      pagePropsPromise,
-    ])
-    const stringifiedProps = safeStringify(pageProps)
-    if (stringifiedProps.status === CANT_STRINGIFY) {
-      console.warn('CIRCULAR DEPENDENCY IN PAGE PROPS', stringifiedProps.parsed)
-    }
-    return {
-      pageProps: stringifiedProps.parsed,
-      initialLocale,
-      canonicalUrl: router.asPath.split('?')[0],
-    }
-  }
-
   render() {
     const {
       Component: Page,
