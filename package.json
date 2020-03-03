@@ -7,7 +7,8 @@
     ]
   },
   "scripts": {
-    "suto": "lerna run dev --scope=suto-* --stream"
+    "suto": "lerna run dev --scope=suto-* --stream",
+    "start": "lerna run dev --scope=suto-* --stream"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.7.4",
