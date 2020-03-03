@@ -16,4 +16,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ff087120a057481e79f9158792f041f25b29332f
+          BRANCH: master # The branch the action should deploy to.
           FOLDER: packages/suto-ssr/out # The folder the action should deploy.
