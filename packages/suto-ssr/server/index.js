@@ -1,6 +1,8 @@
 const express = require('express')
 const next = require('next')
 
+// eslint-disable-next-line no-debugger
+debugger
 const {
   wrapAppHttpWithLogger,
   withTryCatch,

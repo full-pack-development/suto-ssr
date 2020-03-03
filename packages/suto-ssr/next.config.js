@@ -3,8 +3,12 @@ const path = require('path')
 const withSass = require('@zeit/next-sass')
 const withTM = require('next-transpile-modules')
 const { withPlugins } = require('next-compose-plugins')
+const withOptimizedImages = require('next-optimized-images')
 
 module.exports = withPlugins([
+  [withOptimizedImages, {
+    /* config for next-optimized-images */
+  }],
   [withTM, {
     transpileModules: [
       'react-redux',
