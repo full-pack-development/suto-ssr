@@ -13,6 +13,7 @@ import LocaleProvider from '../../_common/LocaleProvider/LocaleProvider'
 import '../../_common/styles/base.scss'
 import rootReducer from '../../store/rootReducer'
 
+import FacebookIcon from './facebook.svg?sprite'
 import classes from './styles.scss'
 
 const makeStore = (initialState) => createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)))
@@ -46,7 +47,9 @@ class MyApp extends App {
             <ModalsProvider
               modalInitialValues={modalInitialValues}
             >
-              <header>Header</header>
+              <header>
+                <FacebookIcon />
+              </header>
               <main className={classes.wrap}>
                 Main
                 <Page
