@@ -2,17 +2,20 @@ import React from 'react'
 import classNames from 'classnames'
 
 import styles from './styles.scss'
+/** Assets */
+import fb from './img/facebook.svg'
+import inst from './img/insta.svg'
 
 const socials = [
   {
     href: '#',
     type: 'facebook',
-    icon: 'https://via.placeholder.com/20',
+    icon: fb,
   },
   {
     href: '#',
     type: 'instagram',
-    icon: 'https://via.placeholder.com/20',
+    icon: inst,
   },
 ]
 

@@ -10,6 +10,7 @@
       @include size(38px);
       @include flex(center, center);
 
+      opacity: 1;
       border: 1px solid var(--white);
       border-radius: 50%;
     }
@@ -17,11 +18,18 @@
 }
 
 .item {
+  @include transition(opacity);
+
+  opacity: 0.7;
   margin: 0 8px;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .icon {
+  @include size(20px);
+
   display: block;
-  max-width: 100%;
-  height: auto;
 }

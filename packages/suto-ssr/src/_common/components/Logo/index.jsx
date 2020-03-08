@@ -1,6 +1,8 @@
 import React from 'react'
 
 import styles from './styles.scss'
+/** Assets */
+import logo from './img/logo.png'
 
 export const Logo = ({
   // required props
@@ -11,7 +13,7 @@ export const Logo = ({
 }) => (
   <div className={styles.block}>
     <img
-      src="https://via.placeholder.com/62"
+      src={logo}
       alt=""
       className={styles.logo}
     />

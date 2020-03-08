@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 45% 31.5% 23.5%;
     height: 100vh;
-    min-height: 1080px;
+    min-height: 700px;
 
     &::after {
       top: 56%;
@@ -32,13 +32,22 @@
       content: '';
     }
   }
+
+  @include media-breakpoint-up(xl) {
+    height: 1080px;
+  }
 }
 
 .main {
   height: 490px;
 
   @include media-breakpoint-up(md) {
-    height: 100%;
+    height: 100vh;
+    min-height: 700px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 1080px;
   }
 }
 
@@ -92,7 +101,11 @@
 .bottom {
   @include media-breakpoint-up(md) {
     height: 36vh;
-    min-height: 390px;
+    min-height: 252px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 390px;
   }
 }
 
@@ -101,7 +114,11 @@
 
   @include media-breakpoint-up(md) {
     height: 64vh;
-    min-height: 690px;
+    min-height: 448px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 690px;
   }
 }
 
@@ -158,6 +175,10 @@
   @include media-breakpoint-up(md) {
     top: 56%;
     margin-top: 20px;
+
+    @media ('max-height': 800px) {
+      top: 54%;
+    }
   }
 
   &.left {
