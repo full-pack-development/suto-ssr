@@ -1,6 +1,9 @@
+import sevenSectionBack from './assets/sectionSeven/sevenSectionBack.jpg'
+import brand from './assets/brands/brand.png'
+
 export const textSections = {
   sectionSeven: {
-    image: 'https://via.placeholder.com/1080x1080',
+    image: sevenSectionBack,
     title: 'Капсули “kit” гарантують дотримання строків та бездоганну якість',
     // eslint-disable-next-line max-len
     text: 'Використання в капсулах передових технологій  та професійних  матеріалів дозволяє економити  час ремонту та забезпечувати найкращий результат',
@@ -8,27 +11,27 @@ export const textSections = {
   brands: [
     {
       id: 'br1',
-      image: 'https://via.placeholder.com/250',
+      image: brand,
     },
     {
       id: 'br2',
-      image: 'https://via.placeholder.com/250',
+      image: brand,
     },
     {
       id: 'br3',
-      image: 'https://via.placeholder.com/250',
+      image: brand,
     },
     {
       id: 'br4',
-      image: 'https://via.placeholder.com/250',
+      image: brand,
     },
     {
       id: 'br5',
-      image: 'https://via.placeholder.com/250',
+      image: brand,
     },
     {
       id: 'br6',
-      image: 'https://via.placeholder.com/250',
+      image: brand,
     },
   ],
   subscribe: {

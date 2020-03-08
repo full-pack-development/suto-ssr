@@ -1,7 +1,7 @@
 @import '../../styles/init';
 
 .block {
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(lg) {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -33,6 +33,10 @@
 .item {
   @include media-breakpoint-up(md) {
     display: grid;
+    grid-template-columns: 1fr 75%;
+  }
+
+  @include media-breakpoint-up(xl) {
     grid-template-columns: 1fr 755px;
   }
 
