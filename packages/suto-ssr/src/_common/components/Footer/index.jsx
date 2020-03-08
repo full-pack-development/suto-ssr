@@ -3,7 +3,7 @@ import React from 'react'
 import { Wrapper } from '../Wrapper'
 import { Logo } from '../Logo'
 import { MainMenu } from '../MainMenu'
-import { Language } from '../Language'
+// import { Language } from '../Language'
 import { SubscribeForm } from '../SubscribeForm'
 import { Socials } from '../Socials'
 
@@ -60,11 +60,11 @@ export const Footer = ({
         <div className={styles.footerBottom}>
           <div className={styles.left}>
             <MainMenu dark />
-            <Language dark />
+            {/* <Language dark /> */}
           </div>
           <div className={styles.copyright}>
             Copyright 2020 ©
-            <span>Created by Light Art Design</span>
+            <span>Created by Full Pack Development</span>
           </div>
         </div>
       </Wrapper>

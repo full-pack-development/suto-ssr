@@ -35,7 +35,6 @@ module.exports = withPlugins([
 ], {
   webpack: (config) => {
     try {
-      console.log('config', config)
       config.resolve.modules.push('src')
       return config
     } catch (err) {

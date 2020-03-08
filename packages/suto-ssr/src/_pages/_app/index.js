@@ -7,18 +7,17 @@ import Head from 'next/head'
 import App from 'next/app'
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 import withRedux from 'next-redux-wrapper'
-
-import { Header } from '../../_common/components/Header'
-import { Footer } from '../../_common/components/Footer'
-import ModalsProvider from '../../_common/ModalsProvider/ModalsProvider'
-import LocaleProvider from '../../_common/LocaleProvider/LocaleProvider'
-import '../../_common/styles/base.scss'
-import rootReducer from '../../store/rootReducer'
+import { Header } from '_common/components/Header'
+import { Footer } from '_common/components/Footer'
+import ModalsProvider from '_common/ModalsProvider/ModalsProvider'
+import LocaleProvider from '_common/LocaleProvider/LocaleProvider'
+import '_common/styles/base.scss'
+import rootReducer from 'store/rootReducer'
+import initialMessagesUk from 'locale/uk.json'
 
 import styles from './styles.scss'
 
 const makeStore = (initialState) => createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)))
-
 const modalInitialValues = {
   contactUs: false,
 }
@@ -29,9 +28,10 @@ class MyApp extends App {
       Component: Page,
       pageProps,
       store,
-      initialLocale,
-      initialMessages,
+      // initialLocale,
+      // initialMessages,
     } = this.props
+    const initialLocale = 'uk'
     return (
       <>
         <Head>
@@ -46,7 +46,7 @@ class MyApp extends App {
         </Head>
         <LocaleProvider
           initialLocale={initialLocale}
-          initialMessages={initialMessages}
+          initialMessages={initialMessagesUk}
         >
           <Provider store={store}>
             <ModalsProvider

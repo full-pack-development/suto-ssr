@@ -1,26 +1,15 @@
 import React from 'react'
 import classNames from 'classnames'
 import NavLink from '_common/components/NavLink/NavLink'
+import { useTranslation } from '_common/LocaleProvider/useTranslation'
 
 import styles from './styles.scss'
 
-const menu = [
-  {
-    href: '/',
-    text: 'ГОЛОВНА',
-  },
-  {
-    href: '/options',
-    text: 'КАПСУЛИ',
-  },
-  {
-    href: '/about',
-    text: 'ПРО KIT',
-  },
-  {
-    href: '/contacts',
-    text: 'КОНТАКТИ',
-  },
+const menuItems = [
+  '',
+  'options',
+  'about',
+  'contacts',
 ]
 
 export const MainMenu = ({
@@ -31,25 +20,28 @@ export const MainMenu = ({
   // optional props
   dark,
   isAdaptive,
-}) => (
-  <nav className={classNames(
-    styles.block,
-    {
-      [styles.darken]: dark,
-      [styles.isAdaptive]: isAdaptive,
-    },
-  )}
-  >
-    {menu.map((item) => (
-      <NavLink
-        href={item.href}
-        className={styles.item}
-        activeClassName={styles.isActive}
-      >
-        {item.text}
-      </NavLink>
-    ))}
-  </nav>
-)
+}) => {
+  const t = useTranslation()
+  return (
+    <nav className={classNames(
+      styles.block,
+      {
+        [styles.darken]: dark,
+        [styles.isAdaptive]: isAdaptive,
+      },
+    )}
+    >
+      {menuItems.map((item) => (
+        <NavLink
+          href={`/${item}`}
+          className={styles.item}
+          activeClassName={styles.isActive}
+        >
+          {t(`header.menu.${item || 'main'}`)}
+        </NavLink>
+      ))}
+    </nav>
+  )
+}
 
 export default MainMenu
