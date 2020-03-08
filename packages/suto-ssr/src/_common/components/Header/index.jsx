@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { Wrapper } from '../Wrapper'
 import { Logo } from '../Logo'
-import { Language } from '../Language'
+// import { Language } from '../Language'
 import { MainMenu } from '../MainMenu'
 import { Socials } from '../Socials'
 
@@ -43,7 +43,7 @@ export const Header = ({
             <MainMenu isAdaptive />
             <Socials />
           </div>
-          <Language />
+          {/* <Language /> */}
         </div>
       </Wrapper>
     </header>

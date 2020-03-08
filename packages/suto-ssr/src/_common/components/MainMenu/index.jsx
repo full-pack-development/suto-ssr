@@ -1,28 +1,25 @@
 import React from 'react'
 import classNames from 'classnames'
+import NavLink from '_common/components/NavLink/NavLink'
 
 import styles from './styles.scss'
 
 const menu = [
   {
-    href: '#',
+    href: '/',
     text: 'ГОЛОВНА',
-    state: 'active',
   },
   {
-    href: '#',
+    href: '/options',
     text: 'КАПСУЛИ',
-    state: '',
   },
   {
-    href: '#',
+    href: '/about',
     text: 'ПРО KIT',
-    state: '',
   },
   {
-    href: '#',
+    href: '/contacts',
     text: 'КОНТАКТИ',
-    state: '',
   },
 ]
 
@@ -44,17 +41,13 @@ export const MainMenu = ({
   )}
   >
     {menu.map((item) => (
-      <a
+      <NavLink
         href={item.href}
-        className={classNames(
-          styles.item,
-          {
-            [styles.isActive]: item.state === 'active',
-          },
-        )}
+        className={styles.item}
+        activeClassName={styles.isActive}
       >
         {item.text}
-      </a>
+      </NavLink>
     ))}
   </nav>
 )
