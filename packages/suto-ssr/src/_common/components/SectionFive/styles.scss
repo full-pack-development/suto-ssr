@@ -1,7 +1,7 @@
 @import '../../styles/init';
 
 .grid {
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(lg) {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -52,6 +52,12 @@
 .ratio {
   display: none;
 
+  @include media-breakpoint-up(lg) {
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+
   @include media-breakpoint-up(xl) {
     display: block;
     position: relative;
@@ -88,6 +94,10 @@
   font-size: 20px;
 
   @include media-breakpoint-up(md) {
+    font-size: 32px;
+  }
+
+  @include media-breakpoint-up(xl) {
     margin-bottom: 60px;
     font-size: 48px;
   }
@@ -100,6 +110,11 @@
   font-size: 16px;
 
   @include media-breakpoint-up(md) {
+    margin-bottom: 60px;
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-up(xl) {
     margin-bottom: 60px;
     font-size: 40px;
   }
@@ -130,9 +145,13 @@
     content: '+';
 
     @include media-breakpoint-up(md) {
-      top: 8px;
-      left: -40px;
+      top: 4px;
+      left: -24px;
       font-size: 16px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      left: -38px;
     }
   }
 

@@ -2,6 +2,10 @@
 
 .spacer {
   @include media-breakpoint-up(lg) {
+    padding: 70px;
+  }
+
+  @include media-breakpoint-up(xl) {
     padding: 116px;
   }
 }
