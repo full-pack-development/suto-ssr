@@ -120,25 +120,9 @@ export const dataSections = {
     },
   ],
   sectionFourth: {
-    titles: {
-      first: {
-        title: 'Large',
-        subTitle: 'flat',
-      },
-      second: {
-        title: 'Smart',
-        subTitle: '',
-      },
-    },
     images: {
       first: firstMinimalLeft,
       second: secondClassicLeft,
-    },
-    text: {
-      title: 'Капсули  ідеальні для створення смартів',
-      // eslint-disable-next-line max-len
-      info: 'Капсули  надають широкі можливості для перетворення економічно обтяжливих великих квартир у компактні та прибуткові смарти, цілком готові для життя, продажу чи під здачу в оренду',
-      button: 'дивитись смарти',
     },
   },
   sectionSix: [

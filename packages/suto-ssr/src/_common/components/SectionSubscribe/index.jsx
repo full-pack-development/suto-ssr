@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from '_common/LocaleProvider/useTranslation'
 
 import { TextSection } from '../TextSection'
 import { SubscribeForm } from '../SubscribeForm'
@@ -7,24 +8,26 @@ import styles from './styles.scss'
 
 export const SectionSubscribe = ({
   // required props
-  data,
+
   // container props
 
   // optional props
-}) => (
-  <div className={styles.block}>
-    <div className={styles.wrapper}>
-      <TextSection
-        reset
-        title={data.title}
-        text={data.text}
-      />
+}) => {
+  const t = useTranslation()
+  return (
+    <div className={styles.block}>
+      <div className={styles.wrapper}>
+        <TextSection
+          reset
+          title={t('subscribe.title')}
+          text={t('subscribe.text')}
+        />
+      </div>
+      <div className={styles.form}>
+        <SubscribeForm />
+      </div>
     </div>
-    <div className={styles.form}>
-      <SubscribeForm />
-    </div>
-  </div>
-
-)
+  )
+}
 
 export default SectionSubscribe

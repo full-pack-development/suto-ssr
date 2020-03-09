@@ -59,7 +59,7 @@ export const SectionFive = ({
       <div className={styles.ratio}>
         <div className={styles.section}>
           <img
-            src="https://via.placeholder.com/960x1080"
+            src={data.image}
             alt=""
             className={styles.image}
           />
