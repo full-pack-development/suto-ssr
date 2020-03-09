@@ -11,9 +11,10 @@ export const TextSection = ({
 
   // optional props
   reset = false,
+  italic = false,
   children,
 }) => (
-  <div className={classNames(styles.block, { [styles.reset]: reset })}>
+  <div className={classNames(styles.block, { [styles.reset]: reset, [styles.italic]: italic })}>
     {title && (
       <p className={styles.title}>{title}</p>
     )}

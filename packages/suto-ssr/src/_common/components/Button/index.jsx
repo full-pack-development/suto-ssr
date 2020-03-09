@@ -7,11 +7,14 @@ export const BUTTON_SIZE = {
   SM: 'sm',
   MD: 'md',
   LG: 'lg',
-  FLUID: 'fluid',
 }
 
 export const BUTTON_PRIORITY = {
   REGULAR: 'regular',
+}
+
+export const BUTTON_COLOR = {
+  OPACITY_HALF: 'opacityHalf',
 }
 
 export const Button = ({
@@ -22,6 +25,7 @@ export const Button = ({
   // optional props
   children,
   size,
+  color,
   priority,
   type = 'button',
   href,
@@ -32,6 +36,7 @@ export const Button = ({
     classNames(
       styles.block,
       styles[size],
+      styles[color],
       styles[priority],
       className,
     )

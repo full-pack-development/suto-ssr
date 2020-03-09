@@ -62,9 +62,10 @@ const MainPage = ({
     <Brands data={textSections.brands} />
     <SectionSubscribe data={textSections.subscribe} />
     <Wrapper>
-      <TextSection>
-        <p className={styles.decor}>{textSections.textSectionSix.title}</p>
-      </TextSection>
+      <TextSection
+        italic
+        title={textSections.textSectionSix.title}
+      />
     </Wrapper>
   </>
 )

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
+/** Helpers */
+import { concatZeroToIndex } from '_common/_helpers/concatZeroToIndex'
 
 import { SliderMarkup } from '../Slider'
 import { SliderArrow } from '../SliderArrow'
 
 import styles from './styles.scss'
-
-const TEN = 10
 
 export const SectionTwo = ({
   // required props
@@ -42,7 +42,7 @@ export const SectionTwo = ({
         })}
         >
           <span className={styles.digit}>
-            {index < TEN ? `0${index + 1}` : index + 1}
+            {concatZeroToIndex(index)}
           </span>
           {data[index].title}
         </div>
@@ -58,7 +58,7 @@ export const SectionTwo = ({
               )}
               >
                 <div className={styles.wrapper}>
-                  <p className={styles.title}>{index < TEN ? `0${index + 1}` : index + 1}</p>
+                  <p className={styles.title}>{concatZeroToIndex(index)}</p>
                   <div className={styles.under}>
                     <div className={styles.subtitle}>
                       {section.subtitle.first}
