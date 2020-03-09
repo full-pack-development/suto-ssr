@@ -1,0 +1,170 @@
+@import '../../styles/init';
+
+.block {
+  display: grid;
+
+  @include media-breakpoint-up(md) {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+
+    .left {
+      grid-row: 1;
+      grid-column: 1 / 4;
+    }
+
+    .right {
+      grid-row: 1;
+      grid-column: 4 / 5;
+    }
+  }
+}
+
+.left {
+  background-color: var(--gray-300);
+}
+
+.content {
+  @include media-breakpoint-up(md) {
+    padding-top: 90px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 490px;
+
+  @include media-breakpoint-up(md) {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row: 2;
+    grid-column: 1 / 5;
+  }
+}
+
+.item {
+  display: none;
+
+  &:first-child {
+    display: block;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    position: relative;
+    padding-top: 200%;
+  }
+}
+
+.image {
+  @include size(100%);
+
+  display: block;
+  object-fit: cover;
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.digit {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+    height: 100%;
+    line-height: 1;
+    font-family: var(--secondary-font-family);
+    font-size: 120px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 180px;
+  }
+}
+
+.wrapper {
+  padding: 30px 24px;
+
+  @include media-breakpoint-up(md) {
+    position: relative;
+    padding-left: 114px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-left: auto;
+    padding-left: 200px;
+    max-width: 1350px;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: var(--secondary-font-family);
+  font-size: 36px;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 100%;
+    font-size: 40px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 80px;
+  }
+}
+
+.subTitle {
+  margin-bottom: 16px;
+  color: var(--white);
+  font-size: 36px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 32px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 42px;
+    font-size: 48px;
+  }
+}
+
+.decor {
+  @include media-breakpoint-up(md) {
+    position: relative;
+  }
+}
+
+.text {
+  padding: 30px 24px;
+
+  @include media-breakpoint-up(md) {
+    padding: 30px 40px;
+  }
+}
+
+.button {
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+}
+

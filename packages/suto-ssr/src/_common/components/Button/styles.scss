@@ -9,16 +9,21 @@
 
   &.regular {
     border-radius: 3px;
+    box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.1);
     background-color: var(--gray-600);
     padding: 0 30px;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--white);
-    font-size: 24px;
+    font-size: inherit;
     font-weight: 600;
 
-    &:hover {
-      box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.1);
+    @include media-breakpoint-up(md) {
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.1);
+      }
     }
   }
 
@@ -28,11 +33,16 @@
   }
 
   &.md {
-    min-height: 80px;
-    font-size: 24px;
+    min-height: 60px;
+    font-size: 16px;
+
+    @include media-breakpoint-up(lg) {
+      min-height: 80px;
+      font-size: 24px;
+    }
   }
 
-  &.fluid {
-    @include size(100%);
+  &.opacityHalf {
+    background-color: rgba(255, 255, 255, 0.25);
   }
 }

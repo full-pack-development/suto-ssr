@@ -44,7 +44,7 @@ export const HeroSection = ({
           <div className={styles.middle}>
             <div className={styles.top}>
               <p className={styles.title}>{section.title}</p>
-              <span className={styles.subtitle}>{section.subtitle}</span>
+              <span className={styles.subtitle}>{section.subTitle}</span>
             </div>
             <div className={classNames(styles.bottom, styles.mobile)}>
               <img
