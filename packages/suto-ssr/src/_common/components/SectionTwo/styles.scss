@@ -24,6 +24,25 @@
   height: 160px;
   color: var(--white);
 
+  li {
+    @include transition(opacity);
+
+    display: none;
+    opacity: 0.4;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  :global {
+
+    .slick-active {
+      display: block;
+      opacity: 1;
+    }
+  }
+
   @include media-breakpoint-up(md) {
     @include flex(center, $direction: column);
 
@@ -46,11 +65,8 @@
 
 .item {
   @include transition(opacity);
+  @include flex(center, center);
 
-  display: none;
-  justify-content: center;
-  opacity: 0.4;
-  text-align: center;
   font-size: 30px;
 
   @include media-breakpoint-up(md) {
@@ -62,11 +78,6 @@
 
   @include media-breakpoint-up(xl) {
     margin-bottom: 0;
-  }
-
-  &.active {
-    display: flex;
-    opacity: 1;
   }
 }
 
