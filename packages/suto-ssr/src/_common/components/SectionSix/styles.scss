@@ -27,6 +27,20 @@
   color: var(--white);
   font-family: var(--secondary-font-family);
 
+  li {
+    @include transition(opacity);
+
+    opacity: 0.6;
+  }
+
+  :global {
+
+    .slick-active {
+      opacity: 1;
+      text-transform: uppercase;
+    }
+  }
+
   @include media-breakpoint-up(lg) {
     @include size(31%, 540px);
 
@@ -40,9 +54,6 @@
 }
 
 .item {
-  @include transition(opacity);
-
-  opacity: 0.6;
   margin-bottom: 20px;
   font-size: 36px;
 
@@ -53,11 +64,6 @@
   @include media-breakpoint-up(lg) {
     margin-bottom: 40px;
     font-size: 48px;
-  }
-
-  &.active {
-    opacity: 1;
-    text-transform: uppercase;
   }
 }
 

@@ -1,10 +1,20 @@
 /** Second section assets */
-import firstMinimalLeft from './assets/sectionTwo/firstMinimalLeft.jpg'
-import firstMinimalMid from './assets/sectionTwo/firstMinimalMid.jpg'
-import firstMinimalRight from './assets/sectionTwo/firstMinimalRight.jpg'
-import secondClassicLeft from './assets/sectionTwo/secondClassicLeft.jpg'
-import secondClassicMid from './assets/sectionTwo/secondClassicMid.jpg'
-import secondClassicRight from './assets/sectionTwo/secondClassicRight.jpg'
+import classicFirst from './assets/capsules/Classic/ClassicOne.jpg'
+import classicTwo from './assets/capsules/Classic/ClassicTwo.jpg'
+import classicThree from './assets/capsules/Classic/ClassicThree.jpg'
+import classicFour from './assets/capsules/Classic/ClassicFour.jpg'
+import loftOne from './assets/capsules/Loft/LoftOne.jpg'
+import loftTwo from './assets/capsules/Loft/LoftTwo.jpg'
+import loftThree from './assets/capsules/Loft/LoftThree.jpg'
+import loftFour from './assets/capsules/Loft/LoftFour.jpg'
+import minimalOne from './assets/capsules/Minimal/MinimalOne.jpeg'
+import minimalTwo from './assets/capsules/Minimal/MinimalTwo.jpeg'
+import minimalThree from './assets/capsules/Minimal/MinimalThree.jpeg'
+import minimalFour from './assets/capsules/Minimal/MinimalFour.jpg'
+import scandiOne from './assets/capsules/Scandi/ScandiOne.jpg'
+import scandiTwo from './assets/capsules/Scandi/ScandiTwo.jpg'
+import scandiThree from './assets/capsules/Scandi/ScandiThree.jpg'
+import scandiFour from './assets/capsules/Scandi/ScandiFour.jpg'
 
 export const dataCapsules = [
   {
@@ -13,19 +23,19 @@ export const dataCapsules = [
     images: [
       {
         id: 'capsuleFirstImageOne',
-        src: firstMinimalLeft,
+        src: minimalOne,
       },
       {
         id: 'capsuleFirstImageTwo',
-        src: firstMinimalMid,
+        src: minimalTwo,
       },
       {
         id: 'capsuleFirstImageThree',
-        src: firstMinimalRight,
+        src: minimalThree,
       },
       {
         id: 'capsuleFirstImageFour',
-        src: secondClassicLeft,
+        src: minimalFour,
       },
     ],
     titleFirst: 'Minimalistic',
@@ -39,22 +49,22 @@ export const dataCapsules = [
     images: [
       {
         id: 'capsuleSecondImageOne',
-        src: secondClassicMid,
+        src: loftOne,
       },
       {
         id: 'capsuleSecondImageTwo',
-        src: firstMinimalMid,
+        src: loftTwo,
       },
       {
         id: 'capsuleSecondImageThree',
-        src: secondClassicRight,
+        src: loftThree,
       },
       {
         id: 'capsuleSecondImageFour',
-        src: secondClassicLeft,
+        src: loftFour,
       },
     ],
-    titleFirst: 'Classic',
+    titleFirst: 'Loft',
     titleSecond: 'Look',
     subTitle: 'від 500 $/м²',
     button: 'Докладніше',
@@ -64,25 +74,51 @@ export const dataCapsules = [
     color: '#878787',
     images: [
       {
-        id: 'capsuleThirdImageOne',
-        src: secondClassicMid,
+        id: 'capsuleFirstImageOne',
+        src: classicFirst,
       },
       {
-        id: 'capsuleThirdImageTwo',
-        src: firstMinimalMid,
+        id: 'capsuleFirstImageTwo',
+        src: classicTwo,
       },
       {
-        id: 'capsuleThirdImageThree',
-        src: secondClassicRight,
+        id: 'capsuleFirstImageThree',
+        src: classicThree,
       },
       {
-        id: 'capsuleThirdImageFour',
-        src: secondClassicLeft,
+        id: 'capsuleFirstImageFour',
+        src: classicFour,
       },
     ],
-    titleFirst: 'Loft',
+    titleFirst: 'Classic',
     titleSecond: 'Look',
     subTitle: 'від 600 $/м²',
+    button: 'Докладніше',
+  },
+  {
+    id: 'capsuleFourth',
+    color: '#8c94a7',
+    images: [
+      {
+        id: 'capsuleFirstImageOne',
+        src: scandiOne,
+      },
+      {
+        id: 'capsuleFirstImageTwo',
+        src: scandiTwo,
+      },
+      {
+        id: 'capsuleFirstImageThree',
+        src: scandiThree,
+      },
+      {
+        id: 'capsuleFirstImageFour',
+        src: scandiFour,
+      },
+    ],
+    titleFirst: 'Scandi',
+    titleSecond: 'Look',
+    subTitle: 'від 800 $/м²',
     button: 'Докладніше',
   },
 ]
