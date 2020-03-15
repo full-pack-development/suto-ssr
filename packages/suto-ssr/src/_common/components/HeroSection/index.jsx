@@ -64,12 +64,14 @@ export const HeroSection = ({
             </div>
             <div className={styles.bottom}>
               <p className={styles.text}>{section.bottomTitle}</p>
+
               <Button
                 size={BUTTON_SIZE.MD}
                 priority={BUTTON_PRIORITY.REGULAR}
                 className={styles.button}
+                href={section.button.href}
               >
-                {section.button}
+                {section.button.text}
               </Button>
             </div>
           </div>

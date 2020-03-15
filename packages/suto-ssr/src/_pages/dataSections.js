@@ -22,17 +22,23 @@ export const dataSections = {
       midImage: fmid,
       rightImage: fr,
       bottomTitle: 'від 300 $/м²',
-      button: 'Докладніше',
+      button: {
+        text: 'Докладніше',
+        href: '/prices?price=300',
+      },
     },
     {
       id: 'heroSectionSecond',
       leftImage: heroBg,
       title: 'Готові інтер’єрні рішення',
-      subTitle: 'luxury',
+      subTitle: 'класу люкс',
       midImage: smid,
       rightImage: sr,
       bottomTitle: 'від 1000 $/м²',
-      button: 'Докладніше',
+      button: {
+        text: 'Докладніше',
+        href: '/prices?price=1000',
+      },
     },
   ],
   sectionTwo: [

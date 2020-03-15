@@ -48,7 +48,10 @@ export const textSections = {
         list: ['меблі', 'текстиль', 'декор'],
       },
     ],
-    button: 'детальніше про ціни',
+    button: {
+      text: 'детальніше про ціни',
+      href: '/prices',
+    },
     image: secondClassicRight,
   },
 }

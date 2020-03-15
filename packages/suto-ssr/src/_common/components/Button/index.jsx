@@ -1,3 +1,4 @@
+import NavLink from '_common/components/NavLink/NavLink'
 import React from 'react'
 import classNames from 'classnames'
 
@@ -44,13 +45,13 @@ export const Button = ({
   return (
     <>
       {href && (
-        <a
+        <NavLink
           href={href}
           className={buttonStyles}
           {...props}
         >
           {children}
-        </a>
+        </NavLink>
       )}
       {!href && (
         <button // eslint-disable-line
