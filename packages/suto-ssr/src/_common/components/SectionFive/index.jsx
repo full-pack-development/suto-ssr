@@ -50,8 +50,9 @@ export const SectionFive = ({
         <Button
           priority={BUTTON_PRIORITY.REGULAR}
           size={BUTTON_SIZE.MD}
+          href={data.button.href}
         >
-          {data.button}
+          {data.button.text}
         </Button>
       </div>
     </div>

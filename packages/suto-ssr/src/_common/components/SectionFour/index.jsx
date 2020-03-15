@@ -54,6 +54,7 @@ export const SectionFour = ({
           priority={BUTTON_PRIORITY.REGULAR}
           size={BUTTON_SIZE.MD}
           className={styles.button}
+          href="/smarts"
         >
           {t('sectionFourth.text.button')}
         </Button>
