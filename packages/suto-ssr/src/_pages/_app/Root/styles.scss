@@ -1,4 +1,4 @@
-@import '../../_common/styles/init';
+@import '../../../_common/styles/init';
 
 .block {
   @include flex($direction: column);
